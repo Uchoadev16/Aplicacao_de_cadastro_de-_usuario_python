@@ -292,14 +292,16 @@ class aplicacao(funcs, relatorios):
         #criando opções para o menubar
         filemenu = Menu(menubar)
         filemenu2 = Menu(menubar)
+        
+        def Quit(): self.root.destroy()
+        
         #imprindo em modo cascata o menu de opções
         menubar.add_cascade(label = "Opções", menu = filemenu)
         menubar.add_cascade(label = "Relatorios", menu = filemenu2)
         #adcionando comandos para os menus
-        filemenu.add_command(label="Sair", command= quit)
+        filemenu.add_command(label="Sair", command= Quit)
         filemenu.add_command(label="Limpa Cliente", command=self.limpar_tela)
         
         filemenu2.add_command(label="Ficha do cliente", command=self.geraRelatCliente)
  
-    
 aplicacao()
